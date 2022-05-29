@@ -1,0 +1,199 @@
+*{
+    /* 初始化.取消页面内外边距 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-image: url("../images/background-01.png"); */
+    background-color: #000000;
+}
+#ENTER,#ENTER::after{
+    width: 380px;
+    height: 86px;
+    font-size: 36px;
+    text-align:center;
+    font-family: 'Bebas Neue',cursive;
+    background: linear-gradient(45deg,transparent 5%,#ff013c 5%, #b0ba00);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 88px;
+    box-shadow: 6px 0px 0px #00e6f6;
+    outline: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+#ENTER::after{
+    --slice-0:inset(50% 50% 50% 50%);
+    --slice-1:inset(80% -6px 0 0 );
+    --slice-2:inset(50% -6px 30% 0);
+    --slice-3:inset(10% -6px 85% 0);
+    --slice-4:inset(40% -6px 43% 0);
+    --slice-5:inset(80% -6px 5% 0);
+
+    content: "AVAILABLE NOW";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg,#00e6f600 3% ,#00e6f6 3%,#ff013c 5%);
+    text-shadow: -3px -3px 0px #f8f005,3px 3px 0px #00e6f6;
+    clip-path: var(--slice-0);
+    z-index: 3;
+}
+
+#ENTER:hover::after{
+    animation: 1s glitch;
+    animation-timing-function: steps(2,end);
+}
+
+@keyframes glitch{
+    0%{
+        clip-path: var(--slice-1);
+        transform: translate(-20px,-10px);
+    }
+    10%{
+        clip-path: var(--slice-3);
+        transform: translate(10px,10px);
+    }
+    20%{
+        clip-path: var(--slice-1);
+        transform: translate(-10px,10px);
+    }
+    30%{
+        clip-path: var(--slice-3);
+        transform: translate(0px,5px);
+    }
+    40%{
+        clip-path: var(--slice-2);
+        transform: translate(-5px,0px);
+    }
+    50%{
+        clip-path: var(--slice-1);
+        transform: translate(5px,0px);
+    }
+    60%{
+        clip-path: var(--slice-4);
+        transform: translate(5px,10px);
+    }
+    70%{
+        clip-path: var(--slice-2);
+        transform: translate(-10px,10px);
+    }
+    80%{
+        clip-path: var(--slice-5);
+        transform: translate(20px,-10px);
+    }
+    90%{
+        clip-path: var(--slice-1);
+        transform: translate(-10px,0px);
+    }
+    100%{
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+
+}
+
+.bg-squares{
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.bg-squares li{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.15);
+    position: absolute;
+    bottom: -160px;
+    /* 执行动画：动画名 时长 线性 无限次播放 */
+    animation: square 20s linear infinite;
+}
+/* 为每一个方块设置不同的位置、大小、动画延迟时间、动画时长、背景色 */
+.bg-squares li:nth-child(1){
+    left: 5%;
+}
+.bg-squares li:nth-child(2){
+    left: 15%;
+    width: 80px;
+    height: 80px;
+    /* 动画延迟时间 */
+    animation-delay: 2s;
+    /* 动画时长 */
+    animation-duration: 17s;
+}
+.bg-squares li:nth-child(3){
+    left: 20%;
+    animation-delay: 4s;
+}
+.bg-squares li:nth-child(4){
+    left: 35%;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255,255,255,0.25);
+    animation-duration: 22s;
+}
+.bg-squares li:nth-child(5){
+    left: 65%;
+}
+.bg-squares li:nth-child(6){
+    left: 75%;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255,255,255,0.2);
+    animation-delay: 3s;
+}
+.bg-squares li:nth-child(7){
+    left: 27%;
+    width: 160px;
+    height: 160px;
+    animation-delay: 7s;
+}
+.bg-squares li:nth-child(8){
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 15s;
+    animation-duration: 40s;
+}
+.bg-squares li:nth-child(9){
+    left: 20%;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.3);
+    animation-delay: 2s;
+    animation-duration: 40s;
+}
+.bg-squares li:nth-child(10){
+    left: 85%;
+    width: 160px;
+    height: 160px;
+    animation-delay: 11s;
+}
+.container.success h1{
+    transform: translateY(75px);
+}
+.container.success .form{
+    opacity: 0;
+}
+
+/* 定义动画 */
+@keyframes square {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-120vh) rotate(600deg);
+    }
+}

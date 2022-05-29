@@ -1,0 +1,91 @@
+*{
+    /* 初始化.取消页面内外边距 */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.line{
+    background-color: black;
+    position: absolute;
+    border-radius: 10px;
+    height: 750px;
+    width: 1px;
+    top: 150px;
+    right: 200px;
+    box-shadow: 1px 1px 1px #000;
+    z-index: 1;
+}
+.about{
+    z-index: 0;
+}
+.title1{
+    color: aliceblue;
+    padding-top: 15px;
+    padding-left: 60px;
+    padding-bottom: 10px;
+    background-color: black;
+    font-size: 40px;
+    left: 40px;
+}
+.title2{
+    position: relative;
+    color: rgb(27, 27, 27);
+    padding-top: 4rem;
+    padding-left: 240px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    font-weight: 400;
+}
+.cover{
+    background-color: rgb(166, 166, 166);
+    border-radius: 10px;
+    position: relative;
+    height: 2px;
+    width: 1000px;
+    left: 230px;
+}
+.text1{
+    font-size: 19px;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    left: 270px;
+    width: 930px;
+    font-family:"Microsoft YaHei";
+    font-weight: 200;
+}
+
+.text2{
+    font-size: 19px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    left: 270px;
+    width: 930px;
+    font-family:"Microsoft YaHei";
+    font-weight: 200;
+}
+
+#png1,#png2{
+    margin-right:5px;
+}
+
+.side{
+    position: fixed;
+    writing-mode: tb-rl;
+    right: 0px;
+    top: 300px;
+    width: 30px;
+    height: 80px;
+    background-color: #000;
+    border-radius: 10px 0px 0px 10px;
+    overflow: hidden;
+    user-select: none;
+    transition: all 0.3s;
+}
+
+.side:hover{
+    width: 120px;
+}
